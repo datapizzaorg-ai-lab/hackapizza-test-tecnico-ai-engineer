@@ -14,26 +14,6 @@ Nel cuore pulsante di questo arcipelago cosmico di sapori, si erge un elemento d
 
 ![](https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F6840884%2F0c07b3e6f34ac48b9bb627387ce71531%2FTesto%20del%20paragrafo%20(1).png?generation=1737047186767633&alt=media)
 
-### Specifiche tecniche 💻
-
-La vostra missione è proporre una soluzione per un assistente AI che aiuti i viaggiatori intergalattici a navigare in questo ricco panorama culinario.
-
-Il sistema dovrà essere in grado di suggerire agli utenti piatti appropriati sulla base delle loro richieste:
-
-- Interpretando domande in linguaggio naturale
-- Gestendo query complesse che coinvolgono preferenze e restrizioni alimentari
-- Elaborando informazioni provenienti da diverse fonti (menu, blog post, leggi galattiche e manuali di cucina)
-- Verificando la conformità dei piatti con le normative vigenti
-
-Inoltre, il vostro sistema dovrà:
-
-- Utilizzare tecniche di **Generative AI** (**RAG**, **Agenti AI**) per processare e comprendere i documenti forniti
-- Essere in grado di:
-    - Ricevere in input una richiesta utente relativa a possibili piatti che corrispondono a criteri espressi in linguaggio naturale
-    - Fornire in output una lista di piatti che rispettano tali criteri sulla base della documentazione fornita
-
-***Che la forza sia con voi.***
-
 ### Descrizione Dataset 📋
 
 Avrete accesso a un ricco set di documenti appartenenti a questo ecosistema gastronomico galattico:
@@ -47,7 +27,10 @@ Avrete accesso a un ricco set di documenti appartenenti a questo ecosistema gast
     Un documento legislativo contenente:
     
     - Limiti quantitativi applicati all’utilizzo di alcuni ingredienti nella preparazione dei piatti
+    - \[Hint\] Alcuni utenti potrebbero chiedere che il loro piatto rispetti tali limiti, pertanto è necessario controllare la presenza di tali ingredienti e fare una crossref sulla quantità
     - Vincoli relativi alle certificazioni che gli chef hanno bisogno di acquisire per poter utilizzare specifiche tecniche di preparazione dei piatti
+    - \[Hint\] Alcuni utenti potrebbero chiedere che lo chef che prepara il piatto abbia le certificazioni a norma per cucinare tale piatto, pertanto è necessario controllare per ogni tecnica se lo chef ha la certificazione al livello corretto
+
 - `Manuale di Cucina.pdf`
     
     Manuale di cucina che include:
@@ -55,13 +38,42 @@ Avrete accesso a un ricco set di documenti appartenenti a questo ecosistema gast
     - L’elenco e la descrizione delle certificazione che uno chef può acquisire
     - L’elenco degli ordini professionali gastronomici a cui uno chef può aderire
     - L’elenco e la descrizione delle tecniche culinarie di preparazione esistenti
+    - [Hint] La maggior parte del documento descrive nel dettaglio le tecniche disponibili. Ci sono circa 10 macrocategorie di tecniche culinarie dove ciascuna di esse comprende circa 5 tecniche. Alcuni utenti potrebbero richiedere piatti con una specifica macrocategoria di tecnica o una specifica tecnica.
+    - [Hint] Gli ordini professionali sono perlopiù usati da alcuni utenti che esprimono una preferenza verso una specifica tecnica. Questa tecnica in genere è riportata nei menu attraverso l'uso di  emoji + glossario.
+
 - `Menu (30 ristoranti)`
     
-    Documenti in pdf contenenti i menù di 30 ristoranti differenti
+    - Documenti in pdf contenenti i menù di 30 ristoranti differenti
+    - I menu descrivono in linguaggio naturale il ristorante, riportando il nome dello Chef, il nome del ristorante, (laddove presente) il pianeta su cui c'è il ristorante e le licenze culinarie che ha lo chef
+    - Ogni menu contiene 10 piatti
+    - Ogni piatto contiene gli ingredienti usati e le tecniche di preparazione
+    - Alcuni menu possiedono anche una descrizione in linguaggio naturale della preparazione
+    - Laddove via siano certi ordini professionali, i menu lo citano
     
 - `Blog post`
     
-    Pagine HTML che contengono informazioni supplementari su alcuni ristoranti
+    - Pagine HTML che contengono informazioni supplementari su alcuni ristoranti
+    - \[Hint\] Sono necessari solo per un numero limitatissimo di domande
 
 - `domande.csv`
-    File contenente la lista di domande con cui verrà valutata la soluzione implementata
+    - File contenente la lista di esempi di domande che possono essere fatte al sistema
+
+### Specifiche tecniche 💻
+
+La vostra missione è proporre una soluzione per un assistente AI che aiuti i viaggiatori intergalattici a navigare in questo ricco panorama culinario.
+
+Il sistema dovrà essere in grado di suggerire agli utenti piatti appropriati sulla base delle loro richieste:
+
+- Interpretando domande in linguaggio naturale
+- Gestendo query complesse che coinvolgono preferenze e restrizioni alimentari
+- Elaborando informazioni provenienti da diverse fonti (menu, blog post, leggi galattiche e manuali di cucina)
+- (Laddove richiesto esplicitamente) Verificando la conformità dei piatti con le normative vigenti
+
+Inoltre, il vostro sistema dovrà:
+
+- Utilizzare tecniche di **Generative AI** (**RAG**, **Agenti AI**) per processare e comprendere i documenti forniti
+- Essere in grado di:
+    - Ricevere in input una richiesta utente relativa a possibili piatti che corrispondono a criteri espressi in linguaggio naturale
+    - Fornire in output una lista di piatti che rispettano tali criteri sulla base della documentazione fornita
+
+***Che la forza sia con voi.***
