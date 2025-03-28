@@ -62,10 +62,6 @@ Avrete accesso a un ricco set di documenti appartenenti a questo ecosistema gast
 - `Blog post`
     
     Pagine HTML che contengono informazioni supplementari su alcuni ristoranti
-    
-- `dish_mapping.json`
-    
-    Mappatura dei piatti in id numerici progressivi, necessario per dare l’output finale
 
 - `domande.csv`
     File contenente la lista di domande con cui verrà valutata la soluzione implementata
